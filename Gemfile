@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.3.1'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.2.0'
 
 #
 # PLATFORM SPECIFIC
 #
 # OSX
-gem 'rb-fsevent', group: [:development, :test]        # monitor file changes without hammering the disk
-gem 'terminal-notifier-guard', group: [:development]  # notify terminal when specs run
-gem 'terminal-notifier', group: [:development]
+#gem 'rb-fsevent', group: [:development, :test]        # monitor file changes without hammering the disk
+#gem 'terminal-notifier-guard', group: [:development]  # notify terminal when specs run
+#gem 'terminal-notifier', group: [:development]
 # LINUX
-# gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
+gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
 
 
 

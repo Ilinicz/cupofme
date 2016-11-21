@@ -26,11 +26,11 @@
 
 en:
   brand:
-    name: 'StarterKit'
+    name: 'CupOfMe'
 
   emails:
     welcome:
-      subject: 'Welcome to StarterKit'
+      subject: 'Welcome to CupOfMe'
 
   auth:
     login:
