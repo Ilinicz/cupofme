@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
           _: image,
           width: 1200,
           height: 600,
-          type: 'image/png'
+          type: 'image/jpg'
         },
         description: description,
         type: type
