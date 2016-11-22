@@ -79,6 +79,7 @@ gem 'sinatra', require: false
 # Utils
 gem 'addressable'
 gem 'settingslogic'
+gem 'meta-tags'
 
 group :development do
   # Docs

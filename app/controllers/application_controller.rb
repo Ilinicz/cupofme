@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     http_basic_authenticate_with name: user, password: pass
   end
 
+  before_action :meta, if: "request.get?"
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -43,5 +45,52 @@ class ApplicationController < ActionController::Base
     else
       raise
     end
+  end
+
+  def meta(options={})
+    site_name   = "Cup Of Me"
+    description = options[:description] || "Делись знаниями"
+    image       = options[:image]       || "/banner.jpg"
+    type        = options[:type]        || "article"
+    current_url = request.url
+    noindex     = options[:noindex]     || Rails.env.production? ? false : true
+
+    # options[:t] - динамическая часть тега title
+    page_namespace = "#{controller_name}.#{action_name}"
+    title = I18n.t("titles.#{page_namespace}", title: options[:t])  unless I18n.t("titles.#{page_namespace}", default: '').blank?
+
+    defaults = {
+      site:        site_name,
+      title:       title,
+      image:       image,
+      image_src:   image,
+      description: description,
+      reverse: true,
+      noindex: noindex,
+      twitter: {
+        site_name: site_name,
+        site: '@cupofme_dev',
+        card: 'summary',
+        description: description,
+        image: image
+      },
+      og: {
+        url: current_url,
+        site_name: site_name,
+        title: title,
+        image: {
+          _: image,
+          width: 1200,
+          height: 600,
+          type: 'image/png'
+        },
+        description: description,
+        type: type
+      }
+    }
+
+    options.reverse_merge!(defaults)
+
+    set_meta_tags(options.except(:t))
   end
 end
