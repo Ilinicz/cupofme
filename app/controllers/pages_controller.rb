@@ -23,4 +23,8 @@ class PagesController < ApplicationController
   def error
     redirect_to root_path if flash.empty?
   end
+
+  def home
+    redirect_to new_user_registration_path
+  end
 end

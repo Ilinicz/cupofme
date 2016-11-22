@@ -26,11 +26,11 @@ Rails.application.routes.draw do
   devise_for :users, path: devise_prefix,
     controllers: {registrations: 'users/registrations', sessions: 'users/sessions',
       passwords: 'users/passwords', confirmations: 'users/confirmations', unlocks: 'users/unlocks'},
-    path_names: {sign_up: 'signup', sign_in: 'login', sign_out: 'logout'}
+    path_names: {sign_up: 'register', sign_in: 'login', sign_out: 'logout'}
   devise_scope :user do
     get "#{devise_prefix}/after" => 'users/registrations#after_auth', as: 'user_root'
   end
-  get devise_prefix => redirect('/a/signup')
+  get devise_prefix => redirect('/a/register')
 
   # User
   resources :users, path: 'u', only: :show do

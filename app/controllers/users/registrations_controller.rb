@@ -5,6 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :permit_params, only: [:create, :update]
   after_action :cleanup_oauth, only: [:create, :update]
 
+  skip_before_filter :verify_authenticity_token, only: :create
+
   # Additional resource fields to permit
   # Devise already permits email, password, etc.
   SANITIZED_PARAMS = [:first_name, :last_name].freeze

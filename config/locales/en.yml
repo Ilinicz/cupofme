@@ -26,11 +26,11 @@
 
 en:
   brand:
-    name: 'CupOfMe'
+    name: 'cup of me'
 
   emails:
     welcome:
-      subject: 'Welcome to CupOfMe'
+      subject: 'Welcome to Cup Of Me'
 
   auth:
     login:

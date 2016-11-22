@@ -2,7 +2,7 @@
 // Bootswatch
 // -----------------------------------------------------
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700,900" !default;
 @import url($web-font-path);
 
 // Effects =================================================================
@@ -38,9 +38,11 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
 .navbar {
   border: none;
   @include box-shadow(0 1px 2px rgba(0,0,0,.3));
-
+  padding: 0 16px;
   &-brand {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: lowercase;
   }
 
   &-inverse {
@@ -88,8 +90,11 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
 @include btn(link,#fff);
 
 .btn {
+  //padding: 10px 20px;
   text-transform: uppercase;
   border: none;
+  font-weight: bold;
+  //border-radius: 30px;
   @include box-shadow(1px 1px 4px rgba(0,0,0,.4));
   @include transition(all 0.4s);
   @include ripple();

@@ -30,8 +30,9 @@ gem 'dalli'                     # memcached
 gem 'redis-namespace'
 
 # Assets
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'haml-rails'
+gem 'slim-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'headjs-rails'

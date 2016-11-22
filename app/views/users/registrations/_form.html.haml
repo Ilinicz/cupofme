@@ -9,13 +9,13 @@
     = f.input :last_name
 
   - if resource.new_record?
-    - unless hide_password
-      %div{class: resource.errors.empty? ? 'collapse fade' : ''}
-        = f.input :password, required: true, autocomplete: 'off'
+    /- unless hide_password
+    /  %div{class: resource.errors.empty? ? 'collapse fade' : ''}
+    = f.input :password, required: true, autocomplete: 'off'
 
   - else # updating resource
     = f.input :password, autocomplete: 'off'
     - if resource.password_required?
       = f.input :current_password, autocomplete: 'off'
 
-  = f.button :submit, class: 'btn-primary'
+  = f.button :submit, class: 'btn-success btn-block'

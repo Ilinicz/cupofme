@@ -5,6 +5,7 @@
     %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
     %title= content_for?(:title) ? yield(:title) : I18n.t('brand.name')
     %meta{content: (content_for?(:description) ? yield(:description) : I18n.t('brand.name')), name: 'description'}
+    %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     /[if lt IE 9]
       = javascript_include_tag 'ie', 'data-turbolinks-track' => true
@@ -13,16 +14,16 @@
     = csrf_meta_tags
     = yield :head
     = render 'layouts/airbrake'
-  %body{class: "controller__#{controller_name} action__#{action_name}"}
+  %body{class: "controller-#{controller_name} action-#{action_name}"}
     = render 'layouts/navigation'
     .container
       .errors__container
         = render 'layouts/messages'
       = yield
-      %footer.page__footer
-        - if content_for? :footer
-          = yield :footer
-        - else
-          = render 'layouts/footer'
+      //%footer.page__footer
+      //  - if content_for? :footer
+      //    = yield :footer
+      //  - else
+      //    = render 'layouts/footer'
     = render 'layouts/analytics'
     = render 'layouts/javascripts'

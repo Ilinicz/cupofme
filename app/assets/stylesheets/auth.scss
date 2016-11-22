@@ -1,7 +1,30 @@
+.controller-registrations {
+  background: image-url('cup_of_tea.jpg');
+  background-size: cover;
+  h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+    text-transform: lowercase;
+    //font-size: 70px;
+    .small {
+      color: $gray-lighter;
+      text-transform: none;
+    }
+  }
+
+  .title {
+    color: #fff;
+  }
+  form {
+    label {color: $gray-lighter;}
+  }
+}
 .auth__form {
   @extend .row;
   max-width: 420px;
   margin: 0 auto;
+  margin-top: 10%;
 
   .nav-tabs {
     margin-bottom: 20px;
@@ -10,10 +33,12 @@
   .title {
     text-align: center;
     margin-bottom: 2em;
+    //color: #fff;
     .help-block {
       font-size: $font-size-base;
       font-weight: normal;
       margin: 20px 0 -10px;
+      color: #fff;
     }
   }
 
@@ -44,30 +69,34 @@
 .auth__or {
   position: relative;
   font-size: $font-size-h4;
-  color: darken($gray-lighter, 15%);
+  //color: darken($gray-lighter, 15%);
   margin: 20px 0;
   padding: 10px 0;
   hr {
-    background-color: darken($gray-lighter, 10%);
+    //background-color: darken($gray-lighter, 10%);
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+    display: none;
   }
   span {
     display: block;
     position: absolute;
     left: 50%;
-    top: -2px;
+    top: -5px;
     margin-left: -25px;
-    background-color: #fff;
+    //background-color: #fff;
     width: 50px;
     text-align: center;
+    color: #fff;
+    font-weight: bold;
   }
 }
 
 .auth__links {
   @extend .help-block;
   margin: 30px 0;
+  color: $gray-lighter;
 }
 
 .auth__group {
