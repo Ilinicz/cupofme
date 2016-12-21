@@ -23,6 +23,8 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
           li = link_to edit_user_registration_path, title: I18n.t('account.edit.link') do
              = render 'users/avatar', size: :tiny
         - unless user_signed_in?
+          /.btn-group.navbar-btn
           = link_to I18n.t('auth.signup.link'), new_user_registration_path, class: 'btn btn-success navbar-btn'
+          .divider-vertical
           = link_to I18n.t('auth.login.link'), new_user_session_path, class: 'btn btn-default navbar-btn'
-          .divider
+          .divider-vertical

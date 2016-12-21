@@ -9,6 +9,11 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
 
 .navbar {
   border-width: 0;
+  .divider-vertical {
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+  }
 
   &-default {
 
@@ -292,7 +297,7 @@ a.list-group-item {
     &.active {
       background-color: $state-warning-bg;
     }
-    
+
     &.active:hover,
     &.active:focus {
       background-color: darken($state-warning-bg, 5%);
@@ -303,7 +308,7 @@ a.list-group-item {
     &.active {
       background-color: $state-danger-bg;
     }
-    
+
     &.active:hover,
     &.active:focus {
       background-color: darken($state-danger-bg, 5%);
