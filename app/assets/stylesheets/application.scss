@@ -16,6 +16,7 @@
 @import "footer";
 @import "hacks";
 
+$nprogress-color: $brand-warning;
 // Plugins
 @import 'nprogress';
 @import 'nprogress-bootstrap';

@@ -1,4 +1,4 @@
-.controller-registrations {
+.controller-registrations.action-new, .controller-sessions.action-new {
   background: image-url('cup_of_tea.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     label {color: $gray-lighter;}
   }
 }
-.auth__form {
+.controller-registrations.action-new .auth__form, .controller-sessions.action-new .auth__form {
   @extend .row;
   max-width: 420px;
   margin: 0 auto;
@@ -67,6 +67,7 @@
   }
 }
 
+.controller-registrations.action-new, .controller-sessions.action-new {
 .auth__or {
   position: relative;
   font-size: $font-size-h4;
@@ -139,4 +140,5 @@
       background: #0088cc;
     }
   }
+}
 }

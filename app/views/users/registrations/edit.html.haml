@@ -10,4 +10,11 @@
   = render 'users/registrations/form', show_all: true
 
   = render 'users/shared/links', disable_signup: true
+  %hr
+  .panel.panel-default
+    .panel-body.text-right
+      = link_to destroy_user_session_path, rel: :nofollow do
+        %span
+          = I18n.t('auth.logout.link')
+        %i.fa.fa-sign-out.fa-fw
 
