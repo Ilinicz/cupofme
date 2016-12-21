@@ -94,9 +94,11 @@ group :development do
   # gem 'capistrano'
 
   # Guard
+  gem 'guard'
+  gem 'guard-rails'
   gem 'guard-rspec'
-  # gem 'guard-livereload'
-  # gem 'rack-livereload'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
 end
 
 group :development, :test do

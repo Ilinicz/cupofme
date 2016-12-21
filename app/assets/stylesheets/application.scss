@@ -15,6 +15,7 @@
 @import "cards";
 @import "footer";
 @import "hacks";
+@import "navigation";
 
 $nprogress-color: $brand-warning;
 // Plugins
@@ -26,6 +27,11 @@ $nprogress-color: $brand-warning;
 //
 // Minor Tweaks
 //
+
+html {
+  width: 100%;
+  height: 100%;
+}
 
 // Padding to clear fixed nav
 body {

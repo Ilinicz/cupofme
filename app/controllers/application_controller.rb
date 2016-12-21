@@ -93,4 +93,10 @@ class ApplicationController < ActionController::Base
 
     set_meta_tags(options.except(:t))
   end
+
+  def only_admin!
+    if !current_user.is_admin?
+      redirect_to root_path, alert: 'Нет доступа'
+    end
+  end
 end

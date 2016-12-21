@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     end
   end
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' if defined? RailsAdmin
+  #mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' if defined? RailsAdmin
+  # Admin
+  namespace :admin do
+    resources :users
+  end
 
   # Static pages
   match '/error' => 'pages#error', via: [:get, :post], as: 'error_page'
@@ -36,7 +40,7 @@ Rails.application.routes.draw do
   resources :users, path: 'u', only: :show do
     resources :authentications, path: 'accounts'
   end
-  get '/home' => 'users#show', as: 'user_home'
+  get '/home' => 'users#dashboard', as: 'user_home'
 
   # Dummy preview pages for testing.
   get '/p/test' => 'pages#test', as: 'test'
