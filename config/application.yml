@@ -41,7 +41,7 @@ default_env: &default_env
 
   AWS_ACCESS_KEY_ID: 'AKIAJVR67IUG5XK4P3ZA'
   AWS_SECRET_ACCESS_KEY: '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'
-  S3_BUCKET_NAME: 'cupofme-assets'
+  S3_BUCKET_NAME: 'cupofme-uploads'
   # From address to use when sending email
   MAIL_HOST: 'localhost:3000'
 
