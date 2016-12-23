@@ -10,10 +10,10 @@
 # Read Sprockets README (https:#github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-#= require jquery_2
+#= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require bootstrap
-#= require jquery.turbolinks
 #= require turbolinks
 #= require nprogress
 #= require nprogress-turbolinks
