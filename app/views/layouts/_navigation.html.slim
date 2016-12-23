@@ -18,13 +18,13 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
           /    = render 'users/avatar', size: :tiny
           /    b.caret
           - if current_user.is_admin?
-            li
-              = link_to admin_users_path, title: I18n.t('admin.link') do
+
+            = nav_link_to admin_users_path, title: I18n.t('admin.link'), data:{toggle: 'tooltip', placement: 'bottom'} do
                 i.fa.fa-cogs.fa-lg.fa-fw
-          li
-            = link_to user_home_path, title: t('dashboard.link') do
+
+          = nav_link_to user_home_path, title: t('dashboard.link'), data:{toggle: 'tooltip', placement: 'bottom'} do
               i.fa.fa-dashboard.fa-lg.fa-fw
-          li = link_to edit_user_registration_path, title: I18n.t('account.edit.link'), class: 'nav-avatar' do
+          = nav_link_to edit_user_registration_path, title: I18n.t('account.edit.link'), data:{toggle: 'tooltip', placement: 'bottom'}, class: 'nav-avatar' do
             - if current_user.avatar.present?
               .avatar = image_tag current_user.avatar.thumb
             - else
