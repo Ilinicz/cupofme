@@ -4,7 +4,7 @@
 
 .auth__links
   %label= I18n.t 'auth.links.title'
-  %ul
+  %ul.list-unstyled
     - unless user_signed_in?
       - if !disable_login and controller_name != 'sessions'
         %li= link_to I18n.t('auth.login.link'), new_session_path(resource_name)
@@ -17,9 +17,13 @@
       - if devise_mapping.lockable? and resource_class.unlock_strategy_enabled?(:email) and controller_name != 'unlocks'
         %li= link_to I18n.t('auth.unlock.link'), new_unlock_path(resource_name)
 
-    - if user_signed_in?
-      - if devise_mapping.confirmable? and controller_name != 'confirmations' and not resource.confirmed?
-        %li= link_to I18n.t('auth.confirm.link'), new_confirmation_path(resource_name)
-      - destroy_modal_id = 'destroy-user-modal'
-      %li= link_to I18n.t('account.destroy.link'), registration_path(resource_name), data: { confirm: I18n.t('account.destroy.prompt'), confirm_modal: "##{destroy_modal_id}" }, method: :delete
-      = render 'layouts/destroy_modal', id: destroy_modal_id, i18n_prefix: 'account.destroy'
+  - if user_signed_in?
+    - if devise_mapping.confirmable? and controller_name != 'confirmations' and not resource.confirmed?
+      .panel.panel-default
+        .panel-body
+          = link_to I18n.t('auth.confirm.link'), new_confirmation_path(resource_name)
+    - destroy_modal_id = 'destroy-user-modal'
+    .panel.panel-default
+      .panel-body
+        = link_to I18n.t('account.destroy.link'), registration_path(resource_name), data: { confirm: I18n.t('account.destroy.prompt'), confirm_modal: "##{destroy_modal_id}" }, method: :delete, class: 'text-danger'
+    = render 'layouts/destroy_modal', id: destroy_modal_id, i18n_prefix: 'account.destroy'

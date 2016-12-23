@@ -1,9 +1,15 @@
 .navbar {
   .navbar-nav {
     .nav-avatar {
-      padding: 18px;
-      .avatar {
+      padding: 12px;
+      .avatar, .avatar.large {
+        width: auto;
+        height: auto;
         border-radius: 50%;
+        img {
+          border-radius: 50%;
+          width: 36px;
+        }
       }
     }
   }

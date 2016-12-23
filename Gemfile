@@ -37,7 +37,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'headjs-rails'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
-gem "mini_magick"
+gem "rmagick"
 gem 'fog-aws'
 
 # Javascript

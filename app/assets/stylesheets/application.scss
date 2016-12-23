@@ -37,6 +37,13 @@ body {
   padding-top: 70px;
 }
 
+img {
+  @extend .img-responsive;
+}
+a {
+  &.text-danger:hover {color: darken($brand-danger, 15%);}
+}
+
 // Make sure alerts are nicely formatted
 .alert {
   a {

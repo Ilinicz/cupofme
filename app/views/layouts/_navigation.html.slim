@@ -25,7 +25,10 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
             = link_to user_home_path, title: t('dashboard.link') do
               i.fa.fa-dashboard.fa-lg.fa-fw
           li = link_to edit_user_registration_path, title: I18n.t('account.edit.link'), class: 'nav-avatar' do
-             = render 'users/avatar', size: :tiny
+            - if current_user.avatar.present?
+              .avatar = image_tag current_user.avatar.thumb
+            - else
+              = render 'users/avatar', size: :large
         - unless user_signed_in?
           /.btn-group.navbar-btn
           = link_to I18n.t('auth.signup.link'), new_user_registration_path, class: 'btn btn-success navbar-btn'
