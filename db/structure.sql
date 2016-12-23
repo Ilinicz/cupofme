@@ -157,7 +157,8 @@ CREATE TABLE users (
     locked_at timestamp without time zone,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    is_admin boolean
+    is_admin boolean,
+    avatar character varying
 );
 
 
@@ -291,4 +292,6 @@ INSERT INTO schema_migrations (version) VALUES ('20131021224642');
 INSERT INTO schema_migrations (version) VALUES ('20140204233100');
 
 INSERT INTO schema_migrations (version) VALUES ('20140204233952');
+
+INSERT INTO schema_migrations (version) VALUES ('20161223030936');
 

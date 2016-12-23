@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
   include Concerns::UserImagesConcern
 
   devise :database_authenticatable, :registerable,
