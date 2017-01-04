@@ -8,12 +8,13 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              #7b8a8b !default;   // #333
-$gray:                   #95a5a6 !default; // #555
-$gray-light:             #b4bcc2 !default;   // #999
-$gray-lighter:           #ecf0f1 !default; // #eee
+$gray-dark:              #716b7a !default;
+
+$gray-base:              darken($gray-dark, 30%) !default;
+$gray-darker:            darken($gray-dark, 20%) !default;
+$gray:                   lighten($gray-dark, 15%) !default;
+$gray-light:             lighten($gray-dark, 35%) !default;
+$gray-lighter:           #f7f5fa !default;
 
 $brand-primary:         #2C3E50 !default;
 $brand-success:         #18BC9C !default;
@@ -29,10 +30,10 @@ $brand-danger:          #E74C3C !default;
 //** Background color for `<body>`.
 $body-bg:               #fff !default;
 //** Global text color on `<body>`.
-$text-color:            $brand-primary !default;
+$text-color:            $gray-darker !default;
 
 //** Global textual link color.
-$link-color:            $brand-success !default;
+$link-color:            $brand-info !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      $link-color !default;
 //** Link hover decoration.
@@ -189,7 +190,7 @@ $input-bg-disabled:              $gray-lighter !default;
 //** Text color for `<input>`s
 $input-color:                    $text-color !default;
 //** `<input>` border color
-$input-border:                   #dce4ec !default;
+$input-border:                   $gray-lighter; //#dce4ec !default;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -201,7 +202,7 @@ $input-border-radius-large:      $border-radius-large !default;
 $input-border-radius-small:      $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus:             $brand-primary !default;
+$input-border-focus:             $gray-light !default;
 
 //** Placeholder text color
 $input-color-placeholder:        #acb6c0 !default;
@@ -365,16 +366,16 @@ $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 
-$navbar-default-color:             #fff !default;
-$navbar-default-bg:                $brand-primary !default;
+$navbar-default-color:             $gray !default;
+$navbar-default-bg:                #fff !default;
 $navbar-default-border:            transparent !default;
 
 // Navbar links
-$navbar-default-link-color:                #fff !default;
+$navbar-default-link-color:                $brand-success !default;
 $navbar-default-link-hover-color:          $brand-success !default;
-$navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #fff !default;
-$navbar-default-link-active-bg:            darken($navbar-default-bg, 10%) !default;
+$navbar-default-link-hover-bg:             $gray-lighter !default;
+$navbar-default-link-active-color:         $gray !default;
+$navbar-default-link-active-bg:            $gray-lighter !default; //darken($navbar-default-bg, 5%) !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 

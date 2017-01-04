@@ -8,7 +8,8 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
 // Navbar =====================================================================
 
 .navbar {
-  border-width: 0;
+  border: none;
+
   .divider-vertical {
     display: inline-block;
     width: 10px;
@@ -16,7 +17,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
   }
 
   &-default {
-
     .badge {
       background-color: #fff;
       color: $navbar-default-bg;
@@ -33,6 +33,16 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
 
   &-brand {
     line-height: 1;
+  }
+  &:after {
+    //background: linear-gradient(to left, $gray-light, $brand-success);
+    background: $gray-lighter;
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    height: 3px;
+    left: 0;
   }
 }
 

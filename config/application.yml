@@ -39,8 +39,8 @@ common: &common
 # As a best practice, do not put production values in this file for security reasons.
 default_env: &default_env
 
-  AWS_ACCESS_KEY_ID: 'AKIAJVR67IUG5XK4P3ZA'
-  AWS_SECRET_ACCESS_KEY: '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'
+  AWS_ACCESS_KEY_ID: 'AKIAIJKPT7LXDCFVO6TA'
+  AWS_SECRET_ACCESS_KEY: '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'
   S3_BUCKET_NAME: 'cupofme-uploads'
   # From address to use when sending email
   MAIL_HOST: 'localhost:3000'

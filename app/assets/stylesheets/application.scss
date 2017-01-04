@@ -56,3 +56,29 @@ a {
   bottom: 15px;
   top: auto;
 }
+
+.t {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.bg-gray-base {
+  background-color: $gray-base;
+}
+.bg-gray-darker {
+  background-color: $gray-darker;
+}
+.bg-gray-dark {
+  background-color: $gray-dark;
+}
+.bg-gray {
+  background-color: $gray;
+}
+.bg-gray-light {
+  background-color: $gray-light;
+}
+.bg-gray-lighter {
+  background-color: $gray-lighter;
+}
