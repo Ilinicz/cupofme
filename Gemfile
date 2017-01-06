@@ -42,9 +42,7 @@ gem 'fog-aws'
 
 # Javascript
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
-gem 'nprogress-rails'
+gem 'turbolinks', '~> 5.0.0'
 
 # CoffeeScript
 # Not needed in production if precompiling assets

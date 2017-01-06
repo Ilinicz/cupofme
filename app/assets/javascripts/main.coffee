@@ -1,4 +1,7 @@
-$(document).on 'ready turbolinks:load', ->
+jQuery.fn.ready = (fn)->
+  $(this).on 'turbolinks:load', fn
+
+$ ->
   $('[data-toggle="tooltip"]').tooltip()
 
 

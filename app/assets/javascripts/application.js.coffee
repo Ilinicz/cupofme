@@ -11,12 +11,9 @@
 # about supported directives.
 #
 #= require jquery
-#= require jquery.turbolinks
 #= require jquery_ujs
-#= require bootstrap
 #= require turbolinks
-#= require nprogress
-#= require nprogress-turbolinks
+#= require bootstrap
 #= require rails_confirm_dialog
 #= require jquery.scrollto
 

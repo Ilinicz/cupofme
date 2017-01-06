@@ -17,11 +17,7 @@
 @import "hacks";
 @import "navigation";
 
-$nprogress-color: $brand-warning;
 // Plugins
-@import 'nprogress';
-@import 'nprogress-bootstrap';
-
 
 
 //
@@ -51,10 +47,9 @@ a {
   }
 }
 
-// Postion loading spinner at bottom right
-#nprogress .spinner {
-  bottom: 15px;
-  top: auto;
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: $brand-warning;
 }
 
 .t {
