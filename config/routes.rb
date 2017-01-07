@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   # User
   resources :users, path: 'u', only: :show do
-    resources :authentications, path: 'accounts'
+    resources :authentications, path: 'social'
   end
   get '/home' => 'users#dashboard', as: 'user_home'
 

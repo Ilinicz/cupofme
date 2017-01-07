@@ -42,6 +42,7 @@ gem 'fog-aws'
 
 # Javascript
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5.0.0'
 
 # CoffeeScript
@@ -81,6 +82,7 @@ gem 'sinatra', require: false
 gem 'addressable'
 gem 'settingslogic'
 gem 'meta-tags'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 group :development do
   # Docs

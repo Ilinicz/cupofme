@@ -5,7 +5,7 @@ defaults: &defaults
     path_prefix: /o
 
   devise:
-    path_prefix: /a
+    path_prefix: /account
 
   # List of providers to show on login/signup
   # If empty, all of the providers will be included

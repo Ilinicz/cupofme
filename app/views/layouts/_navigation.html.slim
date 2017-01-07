@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
         span.icon-bar
       = link_to root_path, class: 'navbar-brand' do
         i.fa.fa-coffee.fa-fw.fa-lg
-        = I18n.t('brand.name')
+        span = I18n.t('brand.name')
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
@@ -33,5 +33,5 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
           /.btn-group.navbar-btn
           = link_to I18n.t('auth.signup.link'), new_user_registration_path, class: 'btn btn-success navbar-btn'
           .divider-vertical
-          = link_to I18n.t('auth.login.link'), new_user_session_path, class: 'btn btn-default navbar-btn'
+          = link_to I18n.t('auth.login.link'), new_user_session_path, class: 'btn btn-info navbar-btn btn-outline'
           .divider-vertical

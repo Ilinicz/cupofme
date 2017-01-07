@@ -7,12 +7,13 @@
   - disconnect_modal_id = 'disconnect-oauth-modal'
 
   - Authentication.providers(:featured).each do |provider|
-    .auth__group
-      %h3
-        %i.sico-fixed{class: "sico-#{provider}"}
-        = Authentication.provider_name(provider)
-
-      %ul
+    .auth__group.panel.panel-default
+      .panel-heading
+        .panel-title
+          %i.sico-fixed{class: "sico-#{provider}"}
+          = Authentication.provider_name(provider)
+      //.panel-body
+      %ul.list-group
         - auths = @authentications[provider]
         - if auths.present?
           - auths.each do |authentication|
@@ -20,9 +21,9 @@
               = render 'authentications/card', authentication: authentication, size: :thumb, disconnect_modal: "##{disconnect_modal_id}", return_to: @return_to
 
         - if auths.blank? or Authentication.allow_multiple_for?(provider)
-          %li
+          %li.list-group-item
             - another = auths.present? ? 'Another ' : ''
-            = link_to provider_auth_path(provider, origin: @return_to), class: 'btn btn-primary btn-sm', data: {flow: 'connect'} do
+            = link_to provider_auth_path(provider, origin: @return_to), class: 'btn btn-info', data: {flow: 'connect', provider: provider} do
               %i{class: "sico-#{provider} sico-fixed"}
               Connect #{another}#{Authentication.provider_name(provider)}
             - if auths.present? && provider == 'twitter'

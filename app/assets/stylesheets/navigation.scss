@@ -1,4 +1,11 @@
 .navbar {
+  .navbar-brand {
+    span {
+      color: $gray-light;
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
   .navbar-nav {
     li a {
       min-width: 80px;
