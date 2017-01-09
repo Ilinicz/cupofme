@@ -3,7 +3,7 @@
 - user ||= current_user
 - user.reload
 .avatar{class: size.to_s}
-  - if user.avatar.present?
+  - if user.try(:avatar).present?
     = image_tag user.avatar.normal.url
   - else
     = image_tag user.image_url(size: size, ssl: request.ssl?), alt: alt
