@@ -44,6 +44,7 @@ gem 'fog-aws'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5.0.0'
+gem 'remotipart'
 
 # CoffeeScript
 # Not needed in production if precompiling assets

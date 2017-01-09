@@ -1,10 +1,10 @@
 .avatar {
-  display: inline-block;
-  background-color: $avatar-background-color;
+  display: block;
+  //background-color: $avatar-background-color;
+  background-color: transparent;
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
-
   &.tiny {
     width: 24px;
     height: 24px;
@@ -28,8 +28,8 @@
     }
   }
   &.large {
-    width: 73px;
-    height: 73px;
+    //width: 100px;
+    //height: 100px;
     img {
       max-width: 73px;
     }
@@ -50,6 +50,7 @@
 
   img {
     border: none;
+    border-radius: 50%;
   }
   .default {
     display: none;

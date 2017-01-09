@@ -146,3 +146,10 @@
     }
   }
 }
+
+.avatar-form {
+  width: 100%;
+  text-align: center;
+  margin: $padding-large-vertical 0;
+  img {margin: $padding-base-vertical auto;}
+}

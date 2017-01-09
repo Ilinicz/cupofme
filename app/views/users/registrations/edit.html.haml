@@ -7,14 +7,15 @@
       %p= I18n.t 'devise.registrations.signed_up_but_unconfirmed'
       %p= button_to I18n.t('auth.confirm.submit'), confirmation_path(resource_name), class: 'btn btn-warning btn-xs'
 
-  = render 'users/registrations/form', show_all: true
+  .col-md-6.col-md-offset-3
+    = render 'users/registrations/form', show_all: true
 
-  = render 'users/shared/links', disable_signup: true
-  %hr
-  .panel.panel-default
-    .panel-body.text-right
-      = link_to destroy_user_session_path, rel: :nofollow do
-        %span
-          = I18n.t('auth.logout.link')
-        %i.fa.fa-sign-out.fa-fw
+    = render 'users/shared/links', disable_signup: true
+    %hr
+    .panel.panel-default
+      .panel-body.text-right
+        = link_to destroy_user_session_path, rel: :nofollow do
+          %span
+            = I18n.t('auth.logout.link')
+          %i.fa.fa-sign-out.fa-fw
 

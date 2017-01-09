@@ -1,11 +1,12 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   include DeviseReturnToConcern
+  respond_to :html, :js
 
   before_action :set_vars
   before_action :permit_params, only: [:create, :update]
   after_action :cleanup_oauth, only: [:create, :update]
 
-  skip_before_filter :verify_authenticity_token, only: :create
+  skip_before_filter :verify_authenticity_token, only: [:create, :update]
 
   # Additional resource fields to permit
   # Devise already permits email, password, etc.

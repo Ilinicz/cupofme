@@ -1,15 +1,23 @@
 - show_all ||= false
 - hide_password ||= false
 
+- if !resource.new_record?
+  = form_tag registration_path(resource_name), multipart: true, class: 'avatar-form center-block', remote: true, method: :patch do
+    //= image_tag resource.avatar.thumb, class: "img-circle avatar_#{resource.id}"
+    = render 'users/avatar'
+    .btn.btn-info.btn-xs.btn-file
+      Change Avatar
+      = file_field_tag 'user[avatar]', accept: 'image/png,image/gif,image/jpeg, image/jpg', class: 'avatar-input'
+    .btn-group.remove-avatar(data-toggle='buttons' class="#{(resource.avatar.present? ? '' : 'hide')}")
+      %label.btn.btn-xs.btn-warning
+        %i.fa.fa-times
+        %input(type='checkbox' name='user[remove_avatar]' autocomplete="off" class='remove-avatar-input')
+    = submit_tag 'Submit Photo', id: 'submitPhoto', class: 'hide'
 = simple_form_for resource, as: resource_name, html: { multipart: true }, url: registration_path(resource_name) do |f|
-  - if !resource.new_record?
-    = image_tag resource.avatar.normal
-    = f.input :avatar
-  = f.input :email, autofocus: true, required: true
   - if show_all or resource.try(:first_name).present? or resource.try(:last_name).present?
     = f.input :first_name
     = f.input :last_name
-
+  = f.input :email, required: true
   - if resource.new_record?
     /- unless hide_password
     /  %div{class: resource.errors.empty? ? 'collapse fade' : ''}

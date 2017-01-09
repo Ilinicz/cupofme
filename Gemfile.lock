@@ -485,6 +485,7 @@ DEPENDENCIES
   rails_admin
   rb-inotify
   redis-namespace
+  remotipart
   rmagick
   rspec-activemodel-mocks
   rspec-rails

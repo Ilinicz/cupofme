@@ -12,6 +12,7 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require jquery.remotipart
 #= require turbolinks
 #= require bootstrap
 #= require rails_confirm_dialog
@@ -23,3 +24,4 @@
 #= require avatar.errors
 
 #= require main
+#= require avatar
