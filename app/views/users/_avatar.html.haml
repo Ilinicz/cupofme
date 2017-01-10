@@ -1,7 +1,6 @@
 - size ||= :large
-- alt ||= ''
-- user ||= current_user
-- user.reload
+- alt  ||= ''
+- user ||= User.find(current_user.id)
 .avatar{class: size.to_s}
   - if user.try(:avatar).present?
     = image_tag user.avatar.normal.url

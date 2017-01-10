@@ -115,6 +115,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
         params.delete(:password_confirmation)
       end
       result = resource.update(params)
+      #logger.debug "RESOURCE ID: #{resource.id}"
+      #logger.debug "CURRENT ID: #{current_user.id}"
+      #current_user = resource if resource.id == current_user.id
       clean_up_passwords resource
       result
     end
@@ -127,6 +130,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     user_root_path
+  end
+
+  def after_update_path_for(resource)
+    #signed_in_root_path(resource)
+    edit_user_registration_path
   end
 
   def check_for_existing_account
