@@ -29,3 +29,19 @@
     }
   }
 }
+
+.nav-tabs.account-tabs {
+  margin: $padding-large-vertical 0;
+  li > a {
+    border-bottom: 2px solid $gray-lighter;
+    font-weight: bold;
+  }
+  .active > a {
+    border: 2px solid $gray-lighter;
+    border-bottom: none;
+    &:hover {
+      border: 2px solid $gray-lighter;
+      border-bottom: none;
+    }
+  }
+}

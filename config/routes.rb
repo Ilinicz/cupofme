@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get devise_prefix => redirect('/a/register')
 
   # User
-  resources :users, path: 'u', only: [:show, :update] do
+  resources :users, path: 'u', only: [:show, :update, :edit] do
     resources :authentications, path: 'social'
   end
   get '/home' => 'users#dashboard', as: 'user_home'
